@@ -1,0 +1,82 @@
+2023-06-25 17:47:24,281 INFO    StreamThr :836616 [internal.py:wandb_internal():86] W&B internal server running at pid: 836616, started at: 2023-06-25 17:47:24.280610
+2023-06-25 17:47:24,283 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: status
+2023-06-25 17:47:24,288 INFO    WriterThread:836616 [datastore.py:open_for_write():85] open: /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230625_174724-574shebh/run-574shebh.wandb
+2023-06-25 17:47:24,288 DEBUG   SenderThread:836616 [sender.py:send():369] send: header
+2023-06-25 17:47:24,289 DEBUG   SenderThread:836616 [sender.py:send():369] send: run
+2023-06-25 17:47:24,305 INFO    SenderThread:836616 [sender.py:_maybe_setup_resume():737] checking resume status for None/YOLOv5/574shebh
+2023-06-25 17:47:29,282 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:34,284 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:39,285 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:44,287 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:49,289 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:54,291 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:47:57,643 INFO    SenderThread:836616 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fdff6568e20>, 'Connection to api.wandb.ai timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fdff6568e20>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 320, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fdff6568e20>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+2023-06-25 17:47:59,292 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:48:04,294 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:48:09,296 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:48:14,297 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:48:19,299 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-25 17:48:24,301 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: cancel
+2023-06-25 17:48:24,301 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: cancel
+2023-06-25 17:48:26,311 DEBUG   HandlerThread:836616 [handler.py:handle_request():144] handle_request: shutdown
+2023-06-25 17:48:26,311 INFO    HandlerThread:836616 [handler.py:finish():854] shutting down handler
+2023-06-25 17:48:27,302 INFO    WriterThread:836616 [datastore.py:close():298] close: /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230625_174724-574shebh/run-574shebh.wandb
+2023-06-25 17:48:30,145 DEBUG   SenderThread:836616 [sender.py:send():378] Record cancelled: run
+2023-06-25 17:48:30,145 INFO    SenderThread:836616 [sender.py:finish():1526] shutting down sender

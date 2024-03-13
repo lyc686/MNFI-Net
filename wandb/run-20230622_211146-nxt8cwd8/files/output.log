@@ -1,0 +1,84 @@
+                 from  n    params  module                                  arguments
+  0                -1  1      5280  models.common.Conv                      [3, 48, 6, 2, 2]
+  1                -1  1     41664  models.common.Conv                      [48, 96, 3, 2]
+  2                -1  2     23208  models.common.C3Ghost                   [96, 96, 2]
+  3                -1  1    166272  models.common.Conv                      [96, 192, 3, 2]
+  4                -1  4    101280  models.common.C3Ghost                   [192, 192, 4]
+  5                -1  1    664320  models.common.Conv                      [192, 384, 3, 2]
+  6                -1  6    432096  models.common.C3Ghost                   [384, 384, 6]
+  7                -1  1   2655744  models.common.Conv                      [384, 768, 3, 2]
+  8                -1  2   1346880  models.common.C3Ghost                   [768, 768, 2]
+  9                -1  1   1476864  models.common.SPPF                      [768, 768, 5]
+ 10                -1  2   1346880  models.common.C3Ghost                   [768, 768, 2, False]
+ 11                -1  1    295680  models.common.Conv                      [768, 384, 1, 1]
+ 12                 6  2    341664  models.common.C3Ghost                   [384, 384, 2, False]
+ 13                -1  1   1327872  models.common.Conv                      [384, 384, 3, 2]
+ 14          [-1, 11]  1         0  models.common.Concat                    [1]
+ 15                -1  1    591360  models.common.Conv                      [768, 768, 1, 1]
+ 16                -1  1         0  models.common.Res2Ghost                 [768, 768, False]
+ 17          [-1, 14]  1         0  models.common.Concat                    [1]
+ 18                -1  1   1181184  models.common.Conv                      [1536, 768, 1, 1]
+ 19          [-1, 10]  1         0  models.common.Concat                    [1]
+ 20                -1  2   1936704  models.common.C3Ghost                   [1536, 768, 2, False]
+ 21                -1  1    295680  models.common.Conv                      [768, 384, 1, 1]
+ 22                -1  1     74112  models.common.Conv                      [384, 192, 1, 1]
+ 23                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 24                 4  2     87888  models.common.C3Ghost                   [192, 192, 2, False]
+ 25                -1  1    332160  models.common.Conv                      [192, 192, 3, 2]
+ 26                 6  2    124752  models.common.C3Ghost                   [384, 192, 2, False]
+ 27      [-1, 23, 25]  1         0  models.common.Concat                    [1]
+ 28                -1  1    221952  models.common.Conv                      [576, 384, 1, 1]
+ 29                -1  1         0  models.common.Res2Ghost                 [384, 384, False]
+ 30          [-1, 28]  1         0  models.common.Concat                    [1]
+ 31                -1  1    295680  models.common.Conv                      [768, 384, 1, 1]
+ 32           [-1, 6]  1         0  models.common.Concat                    [1]
+ 33                -1  2   1346880  models.common.C3Ghost                   [768, 768, 2, False]
+ 34                -1  1    295680  models.common.Conv                      [768, 384, 1, 1]
+ 35                -1  1     37056  models.common.Conv                      [384, 96, 1, 1]
+ 36                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 37                 2  2     23208  models.common.C3Ghost                   [96, 96, 2, False]
+ 38                -1  1     83136  models.common.Conv                      [96, 96, 3, 2]
+ 39                 4  2     32424  models.common.C3Ghost                   [192, 96, 2, False]
+ 40      [-1, 36, 38]  1         0  models.common.Concat                    [1]
+ 41                -1  1     55680  models.common.Conv                      [288, 192, 1, 1]
+ 42                -1  1         0  models.common.Res2Ghost                 [192, 192, False]
+ 43          [-1, 41]  1         0  models.common.Concat                    [1]
+ 44                -1  1     74112  models.common.Conv                      [384, 192, 1, 1]
+ 45           [-1, 4]  1         0  models.common.Concat                    [1]
+ 46                19  1    524288  models.common.SEAttention               [2048]
+ 47                32  1    131072  models.common.SEAttention               [1024]
+ 48                45  1     32768  models.common.SEAttention               [512]
+ 49                46  2   5347968  models.common.C3Ghost                   [1536, 1536, 2, False]
+ 50                47  2   1346880  models.common.C3Ghost                   [768, 768, 2, False]
+ 51                48  2    341664  models.common.C3Ghost                   [384, 384, 2, False]
+ 52      [51, 50, 49]  1    104949  models.yolo.Detect                      [8, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [384, 768, 1536]]
+Traceback (most recent call last):
+  File "train.py", line 640, in <module>
+    main(opt)
+  File "train.py", line 529, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "train.py", line 132, in train
+    model = Model(cfg, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 279, in __init__
+    m.stride = torch.tensor([s / x.shape[-2] for x in forward(torch.zeros(2, ch, s, s))])  # forward
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 278, in <lambda>
+    forward = lambda x: self.forward(x)[0] if isinstance(m, Segment) else self.forward(x)
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 293, in forward
+    return self._forward_once(x, profile, visualize)  # single-scale inference, train
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 203, in _forward_once
+    x = m(x)  # run
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/common.py", line 929, in forward
+    y = self.fc(y).view(b, c, 1, 1)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (2x1536 and 2048x128)

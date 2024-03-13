@@ -1,0 +1,88 @@
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Configure stats pid to 836546
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Loading settings from /home/zhangfeng/.config/wandb/settings
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Loading settings from /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/settings
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program': 'train.py'}
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_setup.py:_flush():76] Applying login settings: {'login_timeout': 30}
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:_log_setup():507] Logging user logs to /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230625_174724-574shebh/logs/debug.log
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:_log_setup():508] Logging internal logs to /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230625_174724-574shebh/logs/debug-internal.log
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:init():547] calling init triggers
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'weights': ' ', 'cfg': 'models/test_1.yaml', 'data': 'data_gf.yaml', 'hyp': {'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 0.05, 'cls': 0.5, 'cls_pw': 1.0, 'obj': 1.0, 'obj_pw': 1.0, 'iou_t': 0.2, 'anchor_t': 4.0, 'fl_gamma': 0.0, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0}, 'epochs': 500, 'batch_size': 16, 'imgsz': 640, 'rect': False, 'resume': False, 'nosave': False, 'noval': False, 'noautoanchor': False, 'noplots': False, 'evolve': None, 'bucket': '', 'cache': None, 'image_weights': False, 'device': '0', 'multi_scale': False, 'single_cls': False, 'optimizer': 'SGD', 'sync_bn': False, 'workers': 8, 'project': 'runs/train', 'name': 'exp', 'exist_ok': False, 'quad': False, 'cos_lr': False, 'label_smoothing': 0.0, 'patience': 100, 'freeze': [0], 'save_period': -1, 'seed': 0, 'local_rank': -1, 'entity': None, 'upload_dataset': False, 'bbox_interval': -1, 'artifact_alias': 'latest', 'save_dir': 'runs/train/exp11'}
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:init():596] starting backend
+2023-06-25 17:47:24,271 INFO    MainThread:836546 [wandb_init.py:init():600] setting up manager
+2023-06-25 17:47:24,273 INFO    MainThread:836546 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-06-25 17:47:24,274 INFO    MainThread:836546 [wandb_init.py:init():606] backend started and connected
+2023-06-25 17:47:24,279 INFO    MainThread:836546 [wandb_init.py:init():703] updated telemetry
+2023-06-25 17:47:24,279 INFO    MainThread:836546 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2023-06-25 17:47:52,849 INFO    Thread-1  :836546 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f3153c98eb0>, 'Connection to api.wandb.ai timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3153c98eb0>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 320, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/lib/gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3153c98eb0>, 'Connection to api.wandb.ai timed out. (connect timeout=10)'))
+2023-06-25 17:48:24,301 ERROR   MainThread:836546 [wandb_init.py:init():762] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-06-25 17:48:26,309 ERROR   MainThread:836546 [wandb_init.py:init():1170] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1152, in init
+    run = wi.init()
+  File "/home/zhangfeng/anaconda3/envs/lyc_torch38/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 768, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-06-25 17:48:30,146 WARNING MsgRouterThr:836546 [router.py:message_loop():77] message_loop has been closed

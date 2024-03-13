@@ -1,0 +1,10 @@
+# dataset path
+train: ./dataset/new_gf2153/images/train
+val: ./dataset/new_gf2153/images/val
+test: ./dataset/new_gf2153/images/test
+
+# number of classes
+nc: 8
+
+# class names
+names: ['black_core', 'crack', 'finger', 'star_crack', 'thick_line', 'horizontal_dislocation','vertical_dislocation', 'short_circuit']

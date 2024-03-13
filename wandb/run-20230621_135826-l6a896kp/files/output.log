@@ -1,0 +1,31 @@
+                 from  n    params  module                                  arguments
+  0                -1  1      5280  models.common.Conv                      [3, 48, 6, 2, 2]
+  1                -1  1     41664  models.common.Conv                      [48, 96, 3, 2]
+  2                -1  2     23208  models.common.C3Ghost                   [96, 96, 2]
+  3                -1  1    166272  models.common.Conv                      [96, 192, 3, 2]
+  4                -1  4    101280  models.common.C3Ghost                   [192, 192, 4]
+  5                -1  1    664320  models.common.Conv                      [192, 384, 3, 2]
+  6                -1  6    432096  models.common.C3Ghost                   [384, 384, 6]
+  7                -1  1   2655744  models.common.Conv                      [384, 768, 3, 2]
+  8                -1  2   1346880  models.common.C3Ghost                   [768, 768, 2]
+  9                -1  1   1476864  models.common.SPPF                      [768, 768, 5]
+ 10                 9  1     79876  models.common.GAM_Attention             [768, 768]
+ 11                 6  1     39940  models.common.GAM_Attention             [384, 384]
+ 12                 4  1     19972  models.common.GAM_Attention             [192, 192]
+ 13                10  2   1346880  models.common.C3Ghost                   [768, 768, 2, False]
+ 14                11  2    341664  models.common.C3Ghost                   [384, 384, 2, False]
+ 15                12  2     87888  models.common.C3Ghost                   [192, 192, 2, False]
+Traceback (most recent call last):
+  File "train.py", line 640, in <module>
+    main(opt)
+  File "train.py", line 529, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "train.py", line 132, in train
+    model = Model(cfg, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 269, in __init__
+    self.model, self.save = parse_model(deepcopy(self.yaml), ch=[ch])  # model, savelist
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 449, in parse_model
+    args.append([ch[x] for x in f])
+  File "/home/zhangfeng/liuyuchen/yolov5-res2ghost/models/yolo.py", line 449, in <listcomp>
+    args.append([ch[x] for x in f])
+IndexError: list index out of range

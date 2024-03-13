@@ -1,0 +1,27 @@
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Configure stats pid to 804073
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Loading settings from /home/zhangfeng/.config/wandb/settings
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Loading settings from /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/settings
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program': 'train.py'}
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_setup.py:_flush():76] Applying login settings: {'login_timeout': 30}
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:_log_setup():507] Logging user logs to /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230623_113735-3s734zy4/logs/debug.log
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:_log_setup():508] Logging internal logs to /home/zhangfeng/liuyuchen/yolov5-res2ghost/wandb/run-20230623_113735-3s734zy4/logs/debug-internal.log
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:init():547] calling init triggers
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'weights': ' ', 'cfg': 'models/test_2.yaml', 'data': 'data_gf.yaml', 'hyp': {'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 0.05, 'cls': 0.5, 'cls_pw': 1.0, 'obj': 1.0, 'obj_pw': 1.0, 'iou_t': 0.2, 'anchor_t': 4.0, 'fl_gamma': 0.0, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0}, 'epochs': 500, 'batch_size': 16, 'imgsz': 640, 'rect': False, 'resume': False, 'nosave': False, 'noval': False, 'noautoanchor': False, 'noplots': False, 'evolve': None, 'bucket': '', 'cache': None, 'image_weights': False, 'device': '0', 'multi_scale': False, 'single_cls': False, 'optimizer': 'SGD', 'sync_bn': False, 'workers': 8, 'project': 'runs/train', 'name': 'exp', 'exist_ok': False, 'quad': False, 'cos_lr': False, 'label_smoothing': 0.0, 'patience': 100, 'freeze': [0], 'save_period': -1, 'seed': 0, 'local_rank': -1, 'entity': None, 'upload_dataset': False, 'bbox_interval': -1, 'artifact_alias': 'latest', 'save_dir': 'runs/train/exp9'}
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:init():596] starting backend
+2023-06-23 11:37:35,679 INFO    MainThread:804073 [wandb_init.py:init():600] setting up manager
+2023-06-23 11:37:35,680 INFO    MainThread:804073 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-06-23 11:37:35,682 INFO    MainThread:804073 [wandb_init.py:init():606] backend started and connected
+2023-06-23 11:37:35,686 INFO    MainThread:804073 [wandb_init.py:init():703] updated telemetry
+2023-06-23 11:37:35,686 INFO    MainThread:804073 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2023-06-23 11:37:36,549 INFO    MainThread:804073 [wandb_run.py:_on_init():2176] communicating current version
+2023-06-23 11:37:36,946 INFO    MainThread:804073 [wandb_run.py:_on_init():2185] got version response 
+2023-06-23 11:37:36,946 INFO    MainThread:804073 [wandb_init.py:init():787] starting run threads in backend
+2023-06-23 11:37:38,744 INFO    MainThread:804073 [wandb_run.py:_console_start():2155] atexit reg
+2023-06-23 11:37:38,745 INFO    MainThread:804073 [wandb_run.py:_redirect():2010] redirect: SettingsConsole.WRAP_RAW
+2023-06-23 11:37:38,746 INFO    MainThread:804073 [wandb_run.py:_redirect():2075] Wrapping output streams.
+2023-06-23 11:37:38,746 INFO    MainThread:804073 [wandb_run.py:_redirect():2100] Redirects installed.
+2023-06-23 11:37:38,747 INFO    MainThread:804073 [wandb_init.py:init():828] run started, returning control to user process
+2023-06-23 11:38:00,632 WARNING MsgRouterThr:804073 [router.py:message_loop():77] message_loop has been closed

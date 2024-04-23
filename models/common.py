@@ -602,9 +602,9 @@ class Classify(nn.Module):
         return self.linear(self.drop(self.pool(self.conv(x)).flatten(1)))
 
 
-class Bottle2neck(nn.Module):
+class BottleODneck(nn.Module):
     expansion = 1
-    def __init__(self, inplanes, planes, shortcut, baseWidth=26, scale = 4):
+    def __init__(self, inplanes, planes, shortcut, baseWidth=16, scale = 4):
         super().__init__()
         width = int(math.floor(planes * (baseWidth/64.0)))
         self.conv1 = ODConv(inplanes, width*scale, 1)

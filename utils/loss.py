@@ -44,8 +44,7 @@ class FocalLoss(nn.Module):
 
     def forward(self, pred, true):
         loss = self.loss_fcn(pred, true)
-        # p_t = torch.exp(-loss)
-        # loss *= self.alpha * (1.000001 - p_t) ** self.gamma  # non-zero power for gradient stability
+
 
         # TF implementation https://github.com/tensorflow/addons/blob/v0.7.1/tensorflow_addons/losses/focal_loss.py
         pred_prob = torch.sigmoid(pred)  # prob from logits
@@ -169,14 +168,12 @@ class ComputeLoss:
                 pwh = (pwh.sigmoid() * 2) ** 2 * anchors[i]
                 pbox = torch.cat((pxy, pwh), 1)  # predicted box
                 iou = bbox_iou(pbox, tbox[i], EIoU=True, Focal=True) # iou(prediction, target)
-                #lbox += (1.0 - iou).mean()  # iou loss
                 
                 ### yolov5
                 if type(iou) is tuple:
                     if len(iou) == 2:
                         nwd = wasserstein_loss(pbox, tbox[i]).squeeze()
                         iou_ratio = 0.4
-                        # lbox += (iou[1].detach().squeeze() * (1 - iou[0].squeeze())).mean()
                         lbox += (iou[1].detach().squeeze() * ((1 - iou_ratio) * (1.0 - nwd).mean() + iou_ratio * (1.0 - iou[0].squeeze()))).mean()
                         iou = iou[0].squeeze()
                     else:
